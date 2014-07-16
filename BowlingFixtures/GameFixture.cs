@@ -9,12 +9,7 @@ namespace Bowling.BowlingFixtures
         [TestMethod]
         public void TestMethod1()
         {
-            // Console.WriteLine("Enter The Number Of Pins For This Roll:");
-            int[] pins = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-            //int[] pins = { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-           // int[] pins = { 7,1,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,10,10,10 };
-            
-
+            int[] pins = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };//All Strikes
             Game obj = new Game();
             foreach (int p in pins)
                 obj.Roll(p);
@@ -23,11 +18,8 @@ namespace Bowling.BowlingFixtures
         [TestMethod]
         public void TestMethod2()
         {
-         //   int[] pins = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-            int[] pins = { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-            // int[] pins = { 7,1,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,10,10,10 };
-
-
+         
+            int[] pins = { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };//All Spares
             Game obj = new Game();
             foreach (int p in pins)
                 obj.Roll(p);
@@ -36,16 +28,30 @@ namespace Bowling.BowlingFixtures
         [TestMethod]
         public void TestMethod3()
         {
-            // Console.WriteLine("Enter The Number Of Pins For This Roll:");
-            //int[] pins = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-            //int[] pins = { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-             int[] pins = { 7,1,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,10,10,10 };
-
-
+            
+             int[] pins = { 7,1,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,10,10,10 };//random
             Game obj = new Game();
             foreach (int p in pins)
                 obj.Roll(p);
             Assert.AreEqual(obj.GetScore(), 102);
+        }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            int[] pins = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//Gutter
+            Game obj = new Game();
+            foreach (int p in pins)
+                obj.Roll(p);
+            Assert.AreEqual(obj.GetScore(), 0);
+        }
+        [TestMethod]
+        public void TestMethod5()
+        {
+            int[] pins = { 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 10, 3, 5};//random
+            Game obj = new Game();
+            foreach (int p in pins)
+                obj.Roll(p);
+            Assert.AreEqual(obj.GetScore(), 90);
         }
     }
 }
