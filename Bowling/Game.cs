@@ -32,9 +32,8 @@ namespace Bowling
     public class Game
     {
         public frame[] FrameList = new frame[15];
-        public int flag=0,totalScore = 0, j=0,chance = 0,prevPins=0,i=0,prevChance=0;
+        public int flag=0,i=0,totalScore = 0, j=0;
         int b1=0, b2=0;
-        public int[] store=new int[2];
         public int[] chances=new int[12];
         public void Roll(int pins)
         {
